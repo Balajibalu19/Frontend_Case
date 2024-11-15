@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileList = ({ profiles, showLocationOnMap, handleProfileClick }) => {
+const ProfileList = ({ profiles, handleProfileClick, handleLocationClick }) => {
   return (
     <div className="profile-list">
       {profiles.map((profile) => (
@@ -9,9 +9,10 @@ const ProfileList = ({ profiles, showLocationOnMap, handleProfileClick }) => {
           <div>
             <h3>{profile.name}</h3>
             <p>{profile.description}</p>
+            <p>{profile.location}</p>
             <div className="profile-actions">
-              <button onClick={() => showLocationOnMap(profile.lat, profile.lng)}>
-                Show on Map
+              <button onClick={() => handleLocationClick(profile)}>
+                Summary
               </button>
               <button onClick={() => handleProfileClick(profile)}>
                 View Profile

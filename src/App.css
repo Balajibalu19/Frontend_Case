@@ -10,7 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Align items to the top */
+  justify-content: flex-start;
+  /* Align items to the top */
   height: 100vh;
   text-align: center;
 }
@@ -26,16 +27,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   padding: 20px;
-  margin-top: 50px; /* Added space from the top */
+  /* Added space from the top */
 }
 
 .search-bar {
-  width: 30%; /* Adjust width to 30% of the container for a smaller search bar */
-  max-width: 400px; /* Set a maximum width to avoid it becoming too large on wide screens */
-  padding: 10px; /* Adjust padding for a more compact appearance */
-  font-size: 14px; /* Decreased font size */
+  width: 30%;
+  /* Adjust width to 30% of the container for a smaller search bar */
+  max-width: 400px;
+  /* Set a maximum width to avoid it becoming too large on wide screens */
+  padding: 10px;
+  /* Adjust padding for a more compact appearance */
+  font-size: 14px;
+  /* Decreased font size */
   border-radius: 5px;
   border: 1px solid #ccc;
   outline: none;
@@ -51,19 +57,20 @@ h1 {
 /* Responsive styling for smaller devices */
 @media (max-width: 768px) {
   .search-bar {
-    width: 80%; /* Use more width on smaller screens */
+    width: 80%;
+    /* Use more width on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .search-bar {
-    width: 90%; /* Take up most of the screen on very small devices */
+    width: 90%;
+    /* Take up most of the screen on very small devices */
   }
 }
 
 .admin-panel,
-.profile-list,
-.map-container {
+.profile-list {
   width: 90%;
   max-width: 1200px;
   margin: 20px auto;
@@ -103,11 +110,16 @@ h1 {
 
 /* Profile Image Styling */
 .profile img {
-  width: 100px;  /* Fixed width */
-  height: 100px;  /* Fixed height */
-  object-fit: cover;  /* Ensures images are cropped to fit within the given dimensions */
-  border-radius: 50%;  /* Optional: makes the image circular */
-  margin-right: 10px;  /* Optional: adds some spacing between the image and text */
+  width: 100px;
+  /* Fixed width */
+  height: 100px;
+  /* Fixed height */
+  object-fit: cover;
+  /* Ensures images are cropped to fit within the given dimensions */
+  border-radius: 50%;
+  /* Optional: makes the image circular */
+  margin-right: 10px;
+  /* Optional: adds some spacing between the image and text */
 }
 
 
@@ -177,6 +189,7 @@ button {
 button:hover {
   background-color: #357ab7;
 }
+
 /* Add this to your App.css */
 
 /* Add a margin to the buttons to create space between them */
@@ -197,15 +210,19 @@ button:hover {
 
 /* Add a specific margin to the "Edit" button */
 .profile button:nth-child(3) {
-  margin-top: 10px; /* Adjust the value to control space */
+  margin-top: 10px;
+  /* Adjust the value to control space */
 }
+
 .button-container button {
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 10px;
+  /* Space between buttons */
 }
 
 .button-container button:nth-child(2) {
   margin-left: 0;
 }
+
 .loading-indicator {
   display: flex;
   align-items: center;
@@ -220,6 +237,7 @@ button:hover {
   font-size: 16px;
   color: #36d7b7;
 }
+
 /* App.css */
 
 .error-message {
@@ -231,6 +249,7 @@ button:hover {
   color: green;
   font-weight: bold;
 }
+
 .clear-search-btn {
   background: transparent;
   border: none;
@@ -247,25 +266,22 @@ button:hover {
 /* Styling for Profile List Heading */
 
 
-/* Hover effect for the heading */
-.profile-list-heading:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-  background-color: #ffe0b2; /* Lighter orange background on hover */
-  color: #e64a19; /* Darker orange text color on hover */
-}
 .profile-list-heading {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  /* Larger, bold font */
   color: #4a90e2;
-  text-align: center;
-  margin-top: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #4a90e2;
+  /* Neutral, dark text color */
+  margin-bottom: 15px;
+  transition: color 0.3s, text-shadow 0.3s;
+  /* Smooth color and shadow transition */
 }
+
 
 
 /* Profile Actions - Buttons */
 .profile-actions button {
-  background-color: #00796b; /* Deep teal */
+  background-color: #00796b;
+  /* Deep teal */
   color: white;
   padding: 8px 16px;
   border: none;
@@ -276,7 +292,8 @@ button:hover {
 }
 
 .profile-actions button:hover {
-  background-color: #004d40; /* Darker shade for hover effect */
+  background-color: #004d40;
+  /* Darker shade for hover effect */
 }
 
 .profile-details {
@@ -293,4 +310,100 @@ button:hover {
 
 .profile-details h2 {
   color: #00796b;
+}
+
+
+
+
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  /* Rounded corners */
+  border: 2px solid #36d7b7;
+  /* Border with primary color */
+  background-color: #ffffff;
+  /* White background */
+  color: #36d7b7;
+  /* Primary color for text */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.toggle-buttons button:hover {
+  background-color: #36d7b7;
+  /* Change to primary color */
+  color: #ffffff;
+  /* Change text color to white */
+}
+
+.toggle-buttons button.active {
+  background-color: #36d7b7;
+  /* Active state color */
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+}
+
+.toggle-buttons button:focus {
+  outline: none;
+}
+
+.modal-overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal styles */
+.modal-content {
+  height: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.modal-content h3 {
+  padding: 10px;
+}
+
+.modal-content img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 300px;
+  margin-bottom: 15px;
+}
+
+/* Close modal button */
+.close-modal {
+  color: #d73428;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

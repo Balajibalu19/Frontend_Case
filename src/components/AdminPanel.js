@@ -10,7 +10,7 @@ const AdminPanel = ({ profiles, setProfiles }) => {
     lat: '',
     lng: '',
   });
-  
+
   const [editingProfile, setEditingProfile] = useState(null); // Track the profile being edited
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -61,7 +61,7 @@ const AdminPanel = ({ profiles, setProfiles }) => {
 
   // Handle saving the edited profile
   const handleSaveProfile = () => {
-    setProfiles(profiles.map(profile => 
+    setProfiles(profiles.map(profile =>
       profile.id === editingProfile.id ? { ...editingProfile, ...newProfile } : profile
     ));
     setNewProfile({ name: '', description: '', photo: '', location: '', lat: '', lng: '' });
@@ -77,61 +77,69 @@ const AdminPanel = ({ profiles, setProfiles }) => {
 
   return (
     <div className="admin-panel">
-      <h2>Admin Panel</h2>
-
       {/* Display error or success messages */}
       {error && <div className="error-message">{error}</div>}
       {success && <div className="success-message">{success}</div>}
+      <h2>Profiles</h2>
+      <div className="content-container">
 
-      <div className="input-fields">
-        <input
-          type="text"
-          placeholder="Name"
-          value={newProfile.name}
-          onChange={(e) => setNewProfile({ ...newProfile, name: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={newProfile.description}
-          onChange={(e) => setNewProfile({ ...newProfile, description: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Location"
-          value={newProfile.location}
-          onChange={(e) => setNewProfile({ ...newProfile, location: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Photo URL"
-          value={newProfile.photo}
-          onChange={(e) => setNewProfile({ ...newProfile, photo: e.target.value })}
-        />
+        {/* Profile List */}
+        <div className="profile-list-container">
 
-        {/* Buttons for adding or saving a profile */}
-        {editingProfile ? (
-          <>
-            <button className="save-profile-button" onClick={handleSaveProfile}>Save Changes</button>
-            <button className="cancel-edit-button" onClick={handleCancelEdit}>Cancel Edit</button>
-          </>
-        ) : (
-          <button className="add-profile-button" onClick={handleAddProfile}>Add Profile</button>
-        )}
-      </div>
-
-      {/* Profile List */}
-      <div className="profile-list">
-        {profiles.map(profile => (
-          <div key={profile.id} className="profile">
-            <img src={profile.photo} alt={profile.name} />
-            <h2>{profile.name}</h2>
-            <p>{profile.description}</p>
-            <p>{profile.location}</p>
-            <button onClick={() => handleEditProfile(profile)}>Edit</button>
-            <button onClick={() => handleDeleteProfile(profile.id)}>Delete</button>
+          <div className="profile-list">
+            {profiles.map(profile => (
+              <div key={profile.id} className="profile">
+                <img src={profile.photo} alt={profile.name} />
+                <h2>{profile.name}</h2>
+                <p>{profile.description}</p>
+                <p>{profile.location}</p>
+                <button onClick={() => handleEditProfile(profile)}>Edit</button>
+                <button onClick={() => handleDeleteProfile(profile.id)}>Delete</button>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Add Profile Form */}
+        <div className="form-container">
+          <h2>{editingProfile ? 'Edit Profile' : 'Add Profile'}</h2>
+          <div className="input-fields">
+            <input
+              type="text"
+              placeholder="Name"
+              value={newProfile.name}
+              onChange={(e) => setNewProfile({ ...newProfile, name: e.target.value })}
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              value={newProfile.description}
+              onChange={(e) => setNewProfile({ ...newProfile, description: e.target.value })}
+            />
+            <input
+              type="text"
+              placeholder="Location"
+              value={newProfile.location}
+              onChange={(e) => setNewProfile({ ...newProfile, location: e.target.value })}
+            />
+            <input
+              type="text"
+              placeholder="Photo URL"
+              value={newProfile.photo}
+              onChange={(e) => setNewProfile({ ...newProfile, photo: e.target.value })}
+            />
+
+            {/* Buttons for adding or saving a profile */}
+            {editingProfile ? (
+              <>
+                <button className="save-profile-button" onClick={handleSaveProfile}>Save Changes</button>
+                <button className="cancel-edit-button" onClick={handleCancelEdit}>Cancel Edit</button>
+              </>
+            ) : (
+              <button className="add-profile-button" onClick={handleAddProfile}>Add Profile</button>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
