@@ -1,5 +1,5 @@
 {
-  "homepahe":"https://Balajibalu19.github.io/Frontend_Case",
+  "homepahe": "https://Balajibalu19.github.io/Frontend_Case",
   "name": "project",
   "version": "0.1.0",
   "private": true,
@@ -11,14 +11,15 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-loader-spinner": "^6.1.6",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.14.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
