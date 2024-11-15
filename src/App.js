@@ -194,7 +194,7 @@ const App = () => {
       {/* Show Map when mapVisible is true */}
       {mapVisible && (
         <div className="map-container">
-          <LoadScript googleMapsApiKey="AIzaSyCM7krGiqhaXAVhFJodNI9q8ctAu3Bpt-s">
+          <LoadScript googleMapsApiKey="">
             <GoogleMap
               id="map"
               mapContainerStyle={{ width: '100%', height: '500px' }}
