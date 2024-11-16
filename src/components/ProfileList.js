@@ -12,10 +12,10 @@ const ProfileList = ({ profiles, handleProfileClick, handleLocationClick }) => {
             <p>{profile.location}</p>
             <div className="profile-actions">
               <button onClick={() => handleLocationClick(profile)}>
-                Summary
+                Show on Map
               </button>
               <button onClick={() => handleProfileClick(profile)}>
-                View Profile
+                View Info
               </button>
             </div>
           </div>

@@ -5,6 +5,7 @@ import AdminPanel from './components/AdminPanel';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import { ClipLoader } from "react-spinners"; // Optional: Use this or similar spinner
 
+
 // Profile Modal (View Profile Details)
 const ProfileModal = ({ profile, onClose, onLocationClick }) => {
   if (!profile) return null; // Return nothing if no profile is selected
@@ -34,7 +35,7 @@ const MapModal = ({ profile, onClose }) => {
         <button className="close-modal" onClick={onClose}>X</button>
         <h3>Location of {profile.name}</h3>
         <div className="map-container">
-          <LoadScript googleMapsApiKey="AIzaSyCM7krGiqhaXAVhFJodNI9q8ctAu3Bpt-s">
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               id="map"
               mapContainerStyle={{ width: '100%', height: '400px' }}
